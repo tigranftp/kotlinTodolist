@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initList() {
-        val task1 = TaskModel("task 1", true)
+        val task1 = TaskModel("task 1", false)
         curList.add(task1)
         val task2 = TaskModel("task 2", false)
         curList.add(task2)

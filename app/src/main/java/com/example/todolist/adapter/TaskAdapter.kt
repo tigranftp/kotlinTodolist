@@ -17,7 +17,9 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
         val binding = TaskLayoutBinding.bind(view)
     }
 
-    private var taskList = emptyList<TaskModel>()
+
+
+    private var taskList = ArrayList<TaskModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         var view = LayoutInflater.from(parent.context).inflate(R.layout.task_layout, parent, false )
@@ -31,11 +33,20 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         holder.binding.todoCheckBox.text = taskList[position].textOfTask
         holder.binding.todoCheckBox.isChecked = taskList[position].isChecked
+        holder.binding.todoCheckBox.setOnClickListener{
+            taskList[position].isChecked = holder.binding.todoCheckBox.isChecked
+        }
+        holder.binding.btnDel.setOnClickListener {
+            taskList.removeAt(position)
+            notifyDataSetChanged()
+        }
+
+
 
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setList(list: List<TaskModel>){
+    fun setList(list: ArrayList<TaskModel>){
         taskList = list
         notifyDataSetChanged()
     }

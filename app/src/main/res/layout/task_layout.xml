@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -23,6 +24,21 @@
             tool:checked="false">
 
         </CheckBox>
+        <Button
+            android:id="@+id/btnDel"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:includeFontPadding="true"
+            android:paddingLeft="0dp"
+            android:paddingTop="0dp"
+            android:paddingRight="0dp"
+            android:paddingBottom="0dp"
+            android:text="×"
+            android:textSize="16sp"
+            app:iconPadding="0dp"
+            app:rippleColor="#FF0000" />
+
         
     </RelativeLayout>
 
